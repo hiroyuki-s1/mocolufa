@@ -1,6 +1,6 @@
 # Hey Emacs, this is a -*- makefile -*-
 #----------------------------------------------------------------------------
-# WinAVR Makefile Template written by Eric B. Weddington, J¢ørg Wunsch, et al.
+# WinAVR Makefile Template written by Eric B. Weddington, Jï¿½ï¿½rg Wunsch, et al.
 #  >> Modified for use with the LUFA project. <<
 #
 # Released to the Public Domain
@@ -139,7 +139,7 @@ OBJDIR = .
 
 
 # Path to the LUFA library  ( to LUFA-100807 )
-LUFA_PATH = ../../LUFA-100807
+LUFA_PATH = LUFA-100807
 
 
 # LUFA library compile-time options

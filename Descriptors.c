@@ -66,7 +66,7 @@
  *  process begins.
  */
 /* for SERIAL */
-USB_Descriptor_Device_t PROGMEM DeviceDescriptorSerial =
+USB_Descriptor_Device_t PROGMEM const DeviceDescriptorSerial =
 {
 	.Header                 = {.Size = sizeof(USB_Descriptor_Device_t), .Type = DTYPE_Device},
 		
@@ -90,7 +90,7 @@ USB_Descriptor_Device_t PROGMEM DeviceDescriptorSerial =
 };
 
 /* for MIDI */
-USB_Descriptor_Device_t PROGMEM DeviceDescriptorMIDI =
+USB_Descriptor_Device_t PROGMEM const DeviceDescriptorMIDI =
 {
 	.Header                 = {.Size = sizeof(USB_Descriptor_Device_t), .Type = DTYPE_Device},
 		
@@ -118,7 +118,7 @@ USB_Descriptor_Device_t PROGMEM DeviceDescriptorMIDI =
  *  a configuration so that the host may correctly communicate with the USB device.
  */
 /* for Serial */
-USB_Descriptor_ConfigurationCDC_t PROGMEM ConfigurationDescriptorSerial =
+USB_Descriptor_ConfigurationCDC_t PROGMEM const ConfigurationDescriptorSerial =
 {
 	.Config = 
 		{
@@ -223,7 +223,7 @@ USB_Descriptor_ConfigurationCDC_t PROGMEM ConfigurationDescriptorSerial =
 };
 
 /* for MIDI */
-USB_Descriptor_ConfigurationMIDI_t PROGMEM ConfigurationDescriptorMIDI =
+USB_Descriptor_ConfigurationMIDI_t PROGMEM const ConfigurationDescriptorMIDI =
 {
 	.Config = 
 		{
@@ -402,7 +402,7 @@ USB_Descriptor_ConfigurationMIDI_t PROGMEM ConfigurationDescriptorMIDI =
  *  the string descriptor with index 0 (the first index). It is actually an array of 16-bit integers, which indicate
  *  via the language ID table available at USB.org what languages the device supports for its string descriptors.
  */
-USB_Descriptor_String_t PROGMEM LanguageString =
+USB_Descriptor_String_t PROGMEM const LanguageString =
 {
 	.Header                 = {.Size = USB_STRING_LEN(1), .Type = DTYPE_String},
 		
@@ -414,7 +414,7 @@ USB_Descriptor_String_t PROGMEM LanguageString =
  *  Descriptor.
  */
 /* for Serial */
-USB_Descriptor_String_t PROGMEM ManufacturerStringSerial =
+USB_Descriptor_String_t PROGMEM const ManufacturerStringSerial =
 {
 	.Header                 = {.Size = USB_STRING_LEN(24), .Type = DTYPE_String},
 		
@@ -422,7 +422,7 @@ USB_Descriptor_String_t PROGMEM ManufacturerStringSerial =
 };
 
 /* for MIDI */
-USB_Descriptor_String_t PROGMEM ManufacturerStringMIDI =
+USB_Descriptor_String_t PROGMEM const ManufacturerStringMIDI =
 {
 	.Header                 = {.Size = USB_STRING_LEN(17), .Type = DTYPE_String},
 
@@ -433,7 +433,7 @@ USB_Descriptor_String_t PROGMEM ManufacturerStringMIDI =
  *  Descriptor.
  */
 /* for Serial */
-USB_Descriptor_String_t PROGMEM ProductStringSerial =
+USB_Descriptor_String_t PROGMEM const ProductStringSerial =
 {
 	#if (ARDUINO_MODEL_PID == ARDUINO_UNO_PID)
 		.Header                 = {.Size = USB_STRING_LEN(11), .Type = DTYPE_String},
@@ -444,18 +444,18 @@ USB_Descriptor_String_t PROGMEM ProductStringSerial =
 			
 		.UnicodeString          = L"Arduino Mega 2560"
 	#elif (ARDUINO_MODEL_PID == ATMEL_LUFA_DEMO_PID)
-		.Header                 = {.Size = USB_STRING_LEN(14), .Type = DTYPE_String},
+		.Header                 = {.Size = USB_STRING_LEN(8), .Type = DTYPE_String},
 			
 		.UnicodeString          = L"Lufa USBSerial"
 	#endif
 	
 };
 /* for MIDI */
-USB_Descriptor_String_t PROGMEM ProductStringMIDI =
+USB_Descriptor_String_t PROGMEM const ProductStringMIDI =
 {
 	.Header                 = {.Size = USB_STRING_LEN(8), .Type = DTYPE_String},
 
-	.UnicodeString          = L"MocoLUFA"
+	.UnicodeString          = L"FaderOne"
 };
 
 /** This function is called by the library when in device mode, and must be overridden (see library "USB Descriptors"
